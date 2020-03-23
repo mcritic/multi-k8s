@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project multi-k8s-272016
   - gcloud config set compute/zone europe-west3-a 
   - gcloud container clusters get-credentials multi-k8s 
-  - echo "$DOCKER_PASSWORD" | docker login -ui "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t mcritic/react-test -f ./client/Dockerfile.dev ./client
 
 script:
